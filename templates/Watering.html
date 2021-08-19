@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}預測查詢{% endblock %}
+{% block headmessage %}
+<center>
+<div class="p-3 mb-2 bg-success bg-gradient text-white">
+  <h2><td><span style="font-family:DFKai-sb">輸入數值!  讓我們幫你預測</span></td><h2>
+</div>{% endblock %}
+{% block main %}
+<head>
+  <script>
+   function predict() {
+   
+       first=document.getElementById("first"); 
+       x1=parseFloat(first.value); 
+       second=document.getElementById("second");
+       x2=parseFloat(second.value);
+       
+       y=(-0.988)*x1+0.038*x2+29.467; 
+
+       if (y<=1) {
+                result=document.getElementById("result");
+                result.innerHTML="迅速去準備水，灌!溉!它!";
+                 }
+       else {
+                result=document.getElementById("result");
+                result.innerHTML="預計約   " + Math.round(y) + "   天後須澆水。";
+               }
+       
+      
+       
+
+   }
+  </script>
+ </head>
+<br><br>
+<body bgcolor="#77DDFF">
+ <center>
+ <h3><span class="badge bg-secondary text-dark">預測植物乾燥天數</span></h3><br><br>
+
+ <form>
+  請輸入溫度：
+   <input type="text" id="first"  name="first" /> °C <p><br><br>
+  請輸入濕度：
+  <input type="text"  id="second" name="second" /> % <p>
+
+  <input type="button" class="btn btn-outline-danger" value="預測" onClick="predict();" /> 
+ </form>
+ <p>
+ <h4><div class="border border-info rounded-pill link-primary" id="result">預估顯示</div><h4>
+ <p>
+ </center>
+</body>
+<br><br><br>
+<center>
+<button type="button" class="btn btn-primary btn-lg">現在立刻馬上澆水</button>
+<button type="button" class="btn btn-primary btn-lg">使用Line通知澆水</button>
+</center>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}雨量查詢{% endblock %}
+{% block headmessage %}
+<center>
+<div class="p-3 mb-2 bg-success bg-gradient text-white">
+  <h2><td><span style="font-family:DFKai-sb">雨量偵測</span></td><h2>
+</div>{% endblock %}
+{% block main %}
+<center>
+    
+    <br><br><iframe width="40%" height="400" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRDUrlIMNe-fX7P42h9Cbp-z7RN6NUUWDDYgPpiVBGw9rfh35So8Umrsd_lRAhcCnd3fc-bfmQYT4w6/pubhtml?widget=true&amp;headers=false"></iframe>
+
+</center>
+{% endblock %}

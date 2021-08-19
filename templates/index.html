@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %} AI人工智慧班專題網站 {% endblock %}
+{% block headmessage %} 
+<center>
+<div class="p-3 mb-2 bg-success bg-gradient text-white">
+  <td><span style="font-family:DFKai-sb">
+Hello ~ 歡迎來到白金葛的環境監測網站!
+<small class="h6">-{{names}}專題</small>
+  </span></td>
+</div> {% endblock %}
+{% block main %}
+</center>
+<center>
+  <hr>
+      {% autoescape off %}
+      {{ plot_div }}
+      {% endautoescape %}
+</center>
+  <tr>
+    <td class="table-warning">
+     <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
+      <h4><span class="badge bg-warning text-dark">白金葛小檔案!</span></h4>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading1">簡介</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading2">繁殖要點</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">須知</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#scrollspyHeading3">光照</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading4">濕度</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading5">溫度</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading6">澆水</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading7">施肥</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading8">介質</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading9">修剪</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <h4 id="scrollspyHeading1" class="link-warning">簡介</h4>
+    <p>學名：Pearls and Jade Pothos<br>
+       俗名：白金葛<br>
+       原產地：印度<br>
+       植物特徵:白金葛的葉片形狀看起來有點像愛心符號，與黃金葛很像，只是斑紋由黃色變成白色，而且會有因為光照程度不同而改變的不規則斑紋、紋路千變萬化；其它如莖節處容易長出氣生根，所以有攀爬能力，也能沿著桌面或地面水平生長，還有越往上生長的莖、葉會越大，而向下懸垂的莖、葉則會變小，這些都是植物適應光線環境與生長需求的巧妙演化喔！</p>
+    <h4 id="scrollspyHeading2" class="link-warning">繁殖要點</h4>
+    <p>繁殖方法<br>
+       扦插繁殖：建議在春季取帶葉的莖節來繁殖。<br>
+       繁殖時的介質選擇<br>
+       土耕栽培，建議使用通氣性良好的培養土。<br>
+       水耕栽培，建議採用保水性佳、透氣性良好的「海綿介質」。<br>
+       繁殖時應該注意的地方<br>
+       建議春季、最慢不超過夏季時進行。<br>
+       白金葛可取一段帶葉的莖節，以扦插（阡插）的方式繁殖。<br>
+       大約4個禮拜的時間，根系會發展完成。<br>
+       使用海綿介質，觀葉植物扦插（阡插）繁殖更容易！</p>
+    <h4 id="scrollspyHeading3" class="link-warning">光照</h4>
+    <p>它的葉面光滑，相當耐陰，能在只有微弱光源的環境生存，但若將白金葛擺放在光線明亮的空間，會讓植株整體生長得更為緻密，葉片表面的斑斕變化也會顯得更美麗，相反的放置光照不足的環境時容易讓葉片色澤退去，葉片上的斑紋也會減少或消失。</p>
+    <h4 id="scrollspyHeading4" class="link-warning">濕度</h4>
+    <p>一般室內溼度（低濕度）即可，亦可生存於高濕度環境。</p>
+    <h4 id="scrollspyHeading5" class="link-warning">溫度</h4>
+    <p>平均室溫16-27℃為佳。</p>
+    <h4 id="scrollspyHeading6" class="link-warning">澆水</h4>
+    <p>介質乾了再溼是最好的澆水節奏，並建議不定時針對葉片噴點水會讓白金葛長得更美喔！<br>
+       土耕白金葛，建議使用適當的澆水工具在靠近土壤的枝幹處澆水，若突然有葉片發黃，通常是過度澆水的警訊。<br>
+       水耕白金葛，每次澆水以海綿介質濕透為原則，不要刻意將根部泡在水裡，因為保持根部透氣（根呼吸）是植物照顧的最重要的一環。</p>
+    <h4 id="scrollspyHeading7" class="link-warning">施肥</h4>
+    <p>春 – 秋季時施肥較恰當。<br>
+       觀葉植物營養液：兩週1次，每次一小罐加水稀釋(1:1)。<br>
+       冬季時施肥則建議調整為每個月1次較恰當。<br>
+       建議春季時施肥，其他時期若要施肥則建議調整為每隔1個月施肥1次。</p>
+    <h4 id="scrollspyHeading8" class="link-warning">介質</h4>
+    <p>土耕栽培使用一般的培養土即可，並適度保濕不過度澆水，新手建議搭配有儲水底槽的功能性花器。<br>
+       水耕栽培建議採用海綿介質，讓白金葛有適當的根著處。</p>
+    <h4 id="scrollspyHeading9" class="link-warning">修剪</h4>
+    <p>可依據個人喜好不定期針對外觀做適度修剪。<br>
+       當藤蔓生長過長時可進行修剪，以使其長得更好更茂盛。<br>
+       修剪下來的帶葉的莖部可以再用於扦插繁殖。</p>
+  </div>
+   </td>
+  </tr>
+<center>
+  <p>
+  <img src="plant.jpg" class="img-thumbnail" title="實驗植物圖">
+  <br><br><br>
+ <hr>
+  <a href="https://foliageandme.com/pothos/" class="link-warning">黃 金 葛 參 考 資 料</a><br>
+  <a href="https://www.2ustyle.com/archives/13212" class="link-warning">白 金 葛 參 考 資 料 </a>
+</center>
+{% endblock %}
+
