@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from mysite import views
 
+
 urlpatterns = [
+    path('notice/', views.notice),
     path('index/', views.index),
     path('rain/', views.rain),
     path('temperature/', views.temperature),

@@ -17,7 +17,37 @@ def temperature(request):
 
 def rain(request):
 	return render(request, "rain.html", locals())
+
+def notice(request):
+    return render(request, "notice.html", locals())
 '''
+    #抓取user的notify token
+    user_notify_token_get_url = 'https://notify-bot.line.me/oauth/token'
+    params = {
+        'grant_type':'authorization_code',
+        'code':code,
+        'redirect_uri':'http://127.0.0.1:8000/notice/',
+        'client_id':'XFVJJOuT8BH0QjwzYxOkfe',
+        'client_secret':'t7O9OGzFe8YnjE3oO7segGPp4hRTg5lZK1Y7GPVDEVv'
+
+    }
+    get_token = requests.post(user_notify_token_get_url,params=params)
+    print(get_token.json())
+    token = get_token.json()['access_token']
+    print(token)
+
+    #抓取user的info
+    user_info_url = 'https://notify-api.line.me/api/status'
+    headers = {'Authorization':'Bearer '+token}
+    get_user_info = requests.get(user_info_url,headers=headers)
+    print(get_user_info.json())
+    notify_user_info = get_user_info.json()
+    if notify_user_info['targetType']=='USER':
+        User_Info.objects.filter(name=notify_user_info['target']).update(notify=token)
+    elif notify_user_info['targetType']=='GROUP':
+        pass
+    return HttpResponse()
+
 	def news(request):
 		posts = Post.objects.all()
 		return render(request,"news.html",locals())

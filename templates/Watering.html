@@ -54,6 +54,20 @@
 <br><br><br>
 <center>
 <button type="button" class="btn btn-primary btn-lg">現在立刻馬上澆水</button>
-<button type="button" class="btn btn-primary btn-lg">使用Line通知澆水</button>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  function oAuth2() {
+      var URL = 'https://notify-bot.line.me/oauth/authorize?';
+          URL += 'response_type=code';
+          URL += '&client_id=XFVJJOuT8BH0QjwzYxOkfe'; 
+          URL += '&redirect_uri=http://127.0.0.1:8000/Watering/';
+          URL += '&scope=notify';
+          URL += '&state=NO_STATE';
+          window.location.href = 'https://bold-station-865085.postman.co/workspace/notice~7d72d93c-13cb-42e9-9198-c0d9eeff8f4e/request/17190427-6d65ca50-4f48-487f-af02-361c14a74988';
+        }
+</script>
+</head>
+<button type="button" class="btn btn-primary btn-lg" onclick="oAuth2();">傳送Line通知(notify➜send)</button>
 </center>
 {% endblock %}
